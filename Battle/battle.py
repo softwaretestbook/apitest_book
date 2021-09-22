@@ -26,12 +26,18 @@ def index():
     '''
     首页
     '''
-    return 'please input your username(your english name) and password(your english name)'
+    # 获取自定义头信息
+    def_header= request.headers.get('X-usrg')
+    if def_header is not None:
+        return 'your define a headers X-usrg is:'+def_header
+    else:
+        
+        return 'please input your username(your english name) and password(your english name)'
 
-@app.get('/dif')
+@app.get('/diff')
 def dif():
     '''
-    获取难度
+    获取难度http://127.0.0.1:12356/diff?diff=easy'
     '''
     dif = request.GET.get('diff')
     return 'you select '+str(dif) +' modle!'
@@ -50,7 +56,7 @@ def login():
         ssSession.save
 
 
-        return 'please select One Equipment:\n10001:Knife\n10002:Big Sword\n10003:KuiHuaBaoDian'
+        return 'please select One Equipment:\n10001:Knife\n10002:Big Sword\0003:KuiHuaBaoDian'
     else:
         return 'Error 9901: Username or PassWord!!'
 @app.post('/selectEq')

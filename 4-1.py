@@ -218,3 +218,10 @@ for akey in a_dict:
 
 for avalue in a_dict.values():
     print(avalue)
+## None
+
+print(None is {})
+print(None is 0)
+print(None is False)
+print(None is [])
+print(None is '')

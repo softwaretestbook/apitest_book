@@ -132,3 +132,5 @@ dmypy.json
 .idea/apitest_book.iml
 .idea/inspectionProfiles/profiles_settings.xml
 .idea/modules.xml
+Battle/.vscode/launch.json
+.vscode/launch.json

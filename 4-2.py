@@ -9,11 +9,19 @@ import requests
 import json
 ## get
 print('--------get-------')
-url = 'http://127.0.0.1:12356'
+url = 'http://127.0.0.1:12356'## ##
 res_index = requests.get(url)
+if res_index.status_code == requests.codes.ok:
+    print(requests.codes.ok)
 print(res_index.text)
 print(res_index.status_code)
 print(res_index.headers)
+
+
+print(res_index.headers['Content-Type'])
+print(res_index.headers['content-type'])
+print(res_index.headers.get('Content-Type'))
+print(res_index.headers.get('content-type'))
 ## get--headers
 print('--------get-headers------')
 url = 'http://127.0.0.1:12356'
@@ -46,13 +54,14 @@ password='CrissChan'
 payload = {'username': username,'password':password}
 res_login = requests.post(url_login,data=json.dumps(payload))
 
+print(res_login.cookies['username'])
 print(res_login.text)
 print(res_login.status_code)
 print(res_login.headers)
 
-# url = 'http://127.0.0.1:12356/dif'
-# param = {'diff':'1'}
-#
-# res_get = requests.get(url,params=param)
-# print(res_get.text)
-# print(res_get.url)
+## ReqeustsCookieJar
+
+cookie_jar = requests.cookies.RequestsCookieJar()
+cookie_jar.set('JSESSIONID', '23A15FE6655327749BC822A79CF77198', domain='127.0.0.1', path='/')
+url = 'http://127.0.0.1:12356'
+r = requests.get(url, cookies=cookie_jar)

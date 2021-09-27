@@ -7,10 +7,32 @@
 # @Software: PyCharm
 import requests
 import json
+
+print('--------post-param-------')
+url_login = 'http://127.0.0.1:12356/login'
+username='CrissChan'
+password='CrissChan'
+payload = {'username': username,'password':password}
+res_login = requests.post(url_login,data=json.dumps(payload))# 字符串参数
+res_login = requests.post(url_login,data=payload)#form传参
+
+
+print(res_login.cookies['username'])
+print(res_login.text)
+print(res_login.status_code)
+print(res_login.headers)
+
+
+
+
 ## get
 print('--------get-------')
-url = 'http://127.0.0.1:12356'## ##
+url = 'http://127.0.0.1:12356'
 res_index = requests.get(url)
+print(res_index.encoding)
+print(res_index.json())
+res_index = requests.get(url,stream=True)
+print(res_index.raw)
 if res_index.status_code == requests.codes.ok:
     print(requests.codes.ok)
 print(res_index.text)
@@ -45,7 +67,9 @@ res_diff = requests.get(url_diff,params=payload)
 print(res_diff.text)
 print(res_diff.status_code)
 print(res_diff.headers)
+## 超时
 
+res_github=requests.get('http://github.com',timeout=0.001)
 ## post
 print('--------post-------')
 url_login = 'http://127.0.0.1:12356/login'
@@ -65,3 +89,7 @@ cookie_jar = requests.cookies.RequestsCookieJar()
 cookie_jar.set('JSESSIONID', '23A15FE6655327749BC822A79CF77198', domain='127.0.0.1', path='/')
 url = 'http://127.0.0.1:12356'
 r = requests.get(url, cookies=cookie_jar)
+
+
+
+

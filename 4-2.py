@@ -14,7 +14,9 @@ username='CrissChan'
 password='CrissChan'
 payload = {'username': username,'password':password}
 res_login = requests.post(url_login,data=json.dumps(payload))# 字符串参数
-res_login = requests.post(url_login,data=payload)#form传参
+res_login = requests.post(url_login,data=payload)#form传参,参数'username': 'CrissChan','password':'password'
+payload = (('color', 'red'),('color','green'))
+res_login = requests.post(url_login,data=payload)# form传递，参数'color':['red','green']
 
 
 print(res_login.cookies['username'])

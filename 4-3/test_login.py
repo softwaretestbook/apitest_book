@@ -22,6 +22,8 @@ class TestLogin(TestCase):
         password='CrissChan'
         payload = {'username': username,'password':password}
         res_login = requests.post(url_login,data=json.dumps(payload))
+    
+
         print(res_login.text)
         print(res_login.status_code)
         print(res_login.headers)

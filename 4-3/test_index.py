@@ -18,14 +18,13 @@ class TestIndex(TestCase):
         return super().setUp()
     def tearDown(self) -> None:
         return super().tearDown()
-    def test_(self):
-        ## get
-        print('--------get-------')
+    def test_index(self):
         url = 'http://127.0.0.1:12356'
         res_index = requests.get(url)
-        print(res_index.text)
-        print(res_index.status_code)
-        print(res_index.headers)
+
+        self.assertEqual(res_index.status_code,requests.codes.ok,msg="返回状态码是200")
+        self.assertIn('username',res_index.text,msg='response include username')
+
 
 
 # if __name__ == '__main__':

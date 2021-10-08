@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>接口测试报告</h1>
-<p class='attribute'><strong>Start Time:</strong> 2021-09-29 14:08:12</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:00.011968</p>
-<p class='attribute'><strong>Status:</strong> Pass 4</p>
+<p class='attribute'><strong>Start Time:</strong> 2021-10-08 13:46:07</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.025498</p>
+<p class='attribute'><strong>Status:</strong> Pass 2 Error 2</p>
 
 <p class='description'>接口测试报告</p>
 </div>
@@ -284,49 +284,181 @@ TestCase test_two (test_caseone.TestOne) ready for stopping
     </td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>test_index.TestIndex</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
 </tr>
 
-<tr id='pt2.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_index</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr class='passClass'>
-    <td>test_login.TestLogin</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
-</tr>
-
-<tr id='pt3.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_login</div></td>
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_index</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
-        pass</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
 
-    <div id='div_pt3.1' class="popup_window">
+    <div id='div_ft2.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt3.1: please select One Equipment:
-10001:Knife
-10002:Big Sword 3:KuiHuaBaoDian
-200
-{'Date': 'Wed, 29 Sep 2021 06:08:12 GMT', 'Server': 'WSGIServer/0.2 CPython/3.9.6', 'Content-Length': '72', 'Content-Type': 'text/html; charset=UTF-8', 'Set-cookie': 'beaker.session.id=fb6f463fb4194a579983c7c059e9eed1; Path=/; SameSite=Lax'}
+ft2.1: Traceback (most recent call last):
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/http/client.py", line 1230, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/http/client.py", line 1276, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/http/client.py", line 1225, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/http/client.py", line 1004, in _send_output
+    self.send(msg)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/http/client.py", line 944, in send
+    self.connect()
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x1069d3160&gt;: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/util/retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=12356): Max retries exceeded with url: / (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x1069d3160&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/crisschan/PycharmProjects/apitest_book/4-3/test_index.py", line 23, in test_index
+    res_index = requests.get(url)
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=12356): Max retries exceeded with url: / (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x1069d3160&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_login.TestLogin</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='ft3.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_login</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        error</a>
+
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1: Traceback (most recent call last):
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/http/client.py", line 1230, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/http/client.py", line 1276, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/http/client.py", line 1225, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/http/client.py", line 1004, in _send_output
+    self.send(msg)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/http/client.py", line 944, in send
+    self.connect()
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x1069d3f70&gt;: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/urllib3/util/retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=12356): Max retries exceeded with url: /login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x1069d3f70&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/crisschan/PycharmProjects/apitest_book/4-3/test_login.py", line 24, in test_login
+    res_login = requests.post(url_login,data=json.dumps(payload))
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/requests/api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/crisschan/Library/Python/3.8/lib/python/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=12356): Max retries exceeded with url: /login (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x1069d3f70&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
 
 
         </pre>
@@ -339,9 +471,9 @@ pt3.1: please select One Equipment:
 <tr id='total_row'>
     <td>Total</td>
     <td>4</td>
-    <td>4</td>
+    <td>2</td>
     <td>0</td>
-    <td>0</td>
+    <td>2</td>
     <td>&nbsp;</td>
 </tr>
 </table>

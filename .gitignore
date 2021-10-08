@@ -134,3 +134,6 @@ dmypy.json
 .idea/modules.xml
 Battle/.vscode/launch.json
 .vscode/launch.json
+helloworld/.DS_Store
+.gitignore
+helloworld/proto/.DS_Store

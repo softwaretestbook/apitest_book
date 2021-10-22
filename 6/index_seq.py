@@ -6,23 +6,26 @@
 @Author  :   CrissChan 
 @Version :   1.0
 @Site    :   https://blog.csdn.net/crisschan
-@Desc    :   locust  script
+@Desc    :   locust  script 有执行顺序
 '''
 
 
 #引入Locust的httplocust、Taskset和task
-from locust import HttpUser, TaskSet, task
+from locust import HttpUser, SequentialTaskSet, task
+
 
 #定义用户行为也就是测试用例
-class IndexTask(TaskSet):
+class IndexTask(SequentialTaskSet):
     '''
     the VUser' behavior
     '''
-    @task(100)
+    @task
     def index(self):
         self.client.get('/')# 访问主页
 
-
+    @task
+    def index1(self):
+        self.client.get('/')# 访问主页
 
 # 设置测试场景
 class WebsiteUser(HttpUser):
